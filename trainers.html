@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet the FitnessLab trainers, check live availability, and book a training session.">
+  <title>Coaches — FitnessLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <script src="app.js?v=6" defer></script>
+</head>
+<body>
+  <a class="fl-skip" href="#main">Skip to content</a>
+  <header class="fl-site-header"><div class="fl-header-row">
+    <a class="fl-brand" href="index.html" data-path="home"><span class="fl-brand-mark">F+</span> FITNESSLAB</a>
+    <button class="fl-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span aria-hidden="true"></span></button>
+    <nav class="fl-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html" data-path="home">Home</a><a href="about.html" data-path="about">About</a><a href="programs.html" data-path="programs">Programs</a><a href="trainers.html" data-path="trainers">Trainers</a><a href="membership.html" data-path="membership">Membership</a><a href="journal.html" data-path="journal">Journal</a></nav>
+    <a class="fl-header-cta" href="contact.html" data-path="contact">Get in touch <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main class="fl-page" id="main">
+    <section class="fl-page-hero"><div class="fl-page-hero-inner"><p class="fl-kicker">COACHING / AVAILABILITY / BOOKINGS</p><h1>Find your <span>trainer.</span></h1><p>Choose a coach, view their current weekly availability, and reserve a one-hour training session.</p></div></section>
+    <section class="fl-content fl-wrap">
+      <div class="fl-panel fl-goal-match" data-goal-match id="goal-match">
+        <p class="fl-kicker">START WITH YOUR GOAL</p>
+        <h2>Find a coach for your focus.</h2>
+        <p>Choose an area and we’ll highlight coaches whose listed specialties are the closest match. It’s a starting point, not a medical assessment.</p>
+        <form class="fl-goal-start" data-goal-finder>
+          <label for="trainer-goal">What would you like to work on?
+            <select id="trainer-goal" name="goal">
+              <option value="strength">Strength &amp; muscle</option>
+              <option value="aerobic">Aerobic fitness</option>
+              <option value="movement">Movement &amp; mobility</option>
+              <option value="general">I’m not sure yet</option>
+            </select>
+          </label>
+          <button class="fl-button fl-button-dark" type="submit">Show matching coaches</button>
+        </form>
+        <p class="fl-form-status" data-goal-match-status role="status" aria-live="polite"></p>
+      </div>
+      <div class="fl-section-head"><div><p class="fl-kicker">THE TEAM</p><h2>Meet your coaches.</h2></div></div>
+      <div class="fl-grid" data-trainer-list aria-live="polite"><p class="fl-note">Loading trainers…</p></div>
+      <p class="fl-form-status" data-trainer-list-status role="status" aria-live="polite"></p>
+    </section>
+    <section class="fl-content" style="background:var(--fl-surface)" id="book-session">
+      <div class="fl-wrap fl-two-col">
+        <div><p class="fl-kicker">BOOK A SESSION</p><h2>Choose a time that <span>works for you.</span></h2><p>Sessions are one hour. Available times are based on each trainer’s published weekly schedule and update as sessions are booked. All times are local to Skopje.</p><p>After booking, call <a class="fl-inline-link" href="tel:+38970214761">+389 70 214 761</a> if you need to change or cancel your session.</p></div>
+        <form class="fl-panel fl-form" data-booking-form>
+          <label for="booking-trainer">Trainer<select id="booking-trainer" name="trainerId" required disabled><option value="">Loading trainers…</option></select></label>
+          <label for="booking-date">Date<input id="booking-date" name="date" type="date" required disabled></label>
+          <label for="booking-time">Available time<select id="booking-time" name="time" required disabled><option value="">Choose a trainer and date</option></select></label>
+          <label for="booking-name">Your name<input id="booking-name" name="name" autocomplete="name" maxlength="100" required></label>
+          <label for="booking-email">Email address<input id="booking-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+          <label for="booking-phone">Phone number<input id="booking-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></label>
+          <label for="booking-message">What would you like to work on?<textarea id="booking-message" name="message" maxlength="1000" rows="3"></textarea></label>
+          <p class="fl-note" data-booking-account-note>Sign in or <a href="account.html?return=trainers.html">create an account</a> to link this booking to your account, or continue as a guest.</p>
+          <button class="fl-button fl-button-dark" type="submit" disabled>Book training session <span aria-hidden="true">↗</span></button>
+          <p class="fl-form-status" data-booking-status role="status" aria-live="polite">Your booking details are saved to FitnessLab’s appointment database.</p>
+        </form>
+      </div>
+      <div class="fl-wrap fl-panel fl-booking-confirmation" data-booking-confirmation hidden aria-live="polite">
+        <p class="fl-kicker">SESSION REQUEST SAVED</p>
+        <h2>Your next step is set.</h2>
+        <p data-confirmation-details></p>
+        <p data-confirmation-reference></p>
+        <p data-booking-account-confirmation hidden>Your session is linked to your account. <a href="account.html">View your account</a>.</p>
+        <p>To change or cancel, call <a href="tel:+38970214761">+389 70 214 761</a>. Keep your training notes in your private progress log.</p>
+        <a class="fl-button fl-button-dark" href="progress.html">Open progress log <span aria-hidden="true">↗</span></a>
+        <button class="fl-button" type="button" data-book-another>Book another session</button>
+      </div>
+    </section>
+    <section class="fl-band"><div class="fl-wrap fl-band-inner"><div><p class="fl-kicker">A GOOD FIT MATTERS</p><h2>Meet a coach before you <span>choose a plan.</span></h2></div><a class="fl-button" href="contact.html">Plan an introduction <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="fl-footer"><div class="fl-wrap"><div class="fl-footer-grid"><div><a class="fl-brand" href="index.html"><span class="fl-brand-mark">F+</span> FITNESSLAB</a><p>Curious about training. Serious about people.</p></div><div><h2>Explore</h2><a href="programs.html">Programs & lab</a><a href="trainers.html">Coaches</a><a href="membership.html">Membership</a><a href="journal.html">Journal</a></div><div><h2>Visit</h2><a href="contact.html">Plan a visit</a><a href="mailto:support@fitnesslab.com">support@fitnesslab.com</a><p>Visit FitnessLab in Skopje - Aerodrom.</p></div><div><h2>Useful</h2><a href="privacy.html">Privacy & cookies</a><a href="contact.html">Ask a question ↗</a></div></div><div class="fl-footer-bottom"><span>© <span data-year></span> FitnessLab</span><span>Training information is educational, not medical advice.</span></div></div></footer>
+  <div class="fl-cookie" data-cookie-banner hidden><p>Your cookie-notice choice is saved in your browser. <a href="privacy.html">Privacy details</a>.</p><button class="fl-button" type="button" data-cookie-accept>Got it</button></div>
+  <script src="booking.js?v=3" defer></script>
+</body>
+</html>

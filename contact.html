@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact FitnessLab to ask about training, memberships, lab assessments, or arranging an introductory visit.">
+  <title>Contact FitnessLab — Start a conversation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <script src="app.js?v=5" defer></script>
+</head>
+<body>
+  <a class="fl-skip" href="#main">Skip to content</a>
+  <header class="fl-site-header"><div class="fl-header-row">
+    <a class="fl-brand" href="index.html" data-path="home"><span class="fl-brand-mark">F+</span> FITNESSLAB</a>
+    <button class="fl-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span aria-hidden="true"></span></button>
+    <nav class="fl-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html" data-path="home">Home</a><a href="about.html" data-path="about">About</a><a href="programs.html" data-path="programs">Programs</a><a href="trainers.html" data-path="trainers">Trainers</a><a href="membership.html" data-path="membership">Membership</a><a href="journal.html" data-path="journal">Journal</a></nav>
+    <a class="fl-header-cta" href="contact.html" data-path="contact">Get in touch <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main class="fl-page" id="main">
+    <section class="fl-page-hero"><div class="fl-page-hero-inner"><p class="fl-kicker">QUESTIONS ARE A GREAT PLACE TO START</p><h1>Let’s find your<br><span>next step.</span></h1><p>Ask about programs, memberships, or a first visit. Send a message directly to the FitnessLab team.</p></div></section>
+    <section class="fl-content fl-wrap fl-two-col" id="inquiry">
+      <div><p class="fl-kicker">CONTACT DETAILS</p><h2>Come by or <span>say hello.</span></h2><div class="fl-panel" style="margin-top:24px"><h3>Visit the studio</h3><p>Todor Changov 19<br>Skopje - Aerodrom, North Macedonia</p><p><a class="fl-inline-link" href="https://maps.google.com/?q=Todor+Changov+19,+Skopje,+Aerodrom" target="_blank" rel="noopener noreferrer">Open a map ↗</a></p><h3 style="margin-top:26px">Reach the team</h3><p><a href="mailto:support@fitnesslab.com">support@fitnesslab.com</a><br><a href="tel:+38970214761">+389 70 214 761</a></p><p><a class="fl-inline-link" href="trainers.html#book-session">View trainer availability and request a session ↗</a></p></div></div>
+      <div class="fl-panel"><p class="fl-kicker">SEND AN ENQUIRY</p><h2 style="font-size:30px">What would you like <span>to know?</span></h2>
+        <form class="fl-form" data-lab-form action="https://formsubmit.co/support@fitnesslab.com" method="POST">
+          <input type="hidden" name="_subject" value="New FitnessLab enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" data-form-next>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+          <label for="name">Name <span aria-hidden="true">*</span><input id="name" name="name" autocomplete="name" required></label>
+          <label for="email">Email address <span aria-hidden="true">*</span><input id="email" name="email" type="email" autocomplete="email" required></label>
+          <label for="interest">I’m interested in<select id="interest" name="interest"><option value="">Choose a topic</option><option value="Programs">Programs</option><option value="VO2 assessment">VO₂ assessment</option><option value="Personal training">Personal training</option><option value="Trainer appointment">Trainer appointment</option><option value="Membership">Membership</option></select></label>
+          <label for="message">Message <span aria-hidden="true">*</span><textarea id="message" name="message" required></textarea></label>
+          <button class="fl-button fl-button-dark" type="submit">Prepare enquiry <span aria-hidden="true">↗</span></button>
+          <p class="fl-form-status" data-form-status role="status" aria-live="polite">Your enquiry will be delivered to FitnessLab through a form relay. Your name, email address, selected topic, and message are sent to the relay and forwarded to support@fitnesslab.com. The first submission requires the recipient to confirm the relay activation email.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="fl-footer"><div class="fl-wrap"><div class="fl-footer-grid"><div><a class="fl-brand" href="index.html"><span class="fl-brand-mark">F+</span> FITNESSLAB</a><p>Curious about training. Serious about people.</p></div><div><h2>Explore</h2><a href="programs.html">Programs & lab</a><a href="trainers.html">Coaches</a><a href="membership.html">Membership</a><a href="journal.html">Journal</a></div><div><h2>Visit</h2><a href="contact.html">Plan a visit</a><a href="mailto:support@fitnesslab.com">support@fitnesslab.com</a><p>Visit FitnessLab in Skopje - Aerodrom.</p></div><div><h2>Useful</h2><a href="privacy.html">Privacy & cookies</a><a href="about.html">Our approach</a></div></div><div class="fl-footer-bottom"><span>© <span data-year></span> FitnessLab</span><span>Training information is educational, not medical advice.</span></div></div></footer>
+  <div class="fl-cookie" data-cookie-banner hidden><p>Your cookie-notice choice is saved in your browser. <a href="privacy.html">Privacy details</a>.</p><button class="fl-button" type="button" data-cookie-accept>Got it</button></div>
+</body>
+</html>

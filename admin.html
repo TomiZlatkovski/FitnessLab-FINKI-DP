@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manage FitnessLab trainers, weekly availability, and session bookings.">
+  <title>Trainer admin — FitnessLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <script src="app.js?v=6" defer></script>
+  <script src="admin.js?v=6" defer></script>
+</head>
+<body>
+  <a class="fl-skip" href="#main">Skip to content</a>
+  <header class="fl-site-header"><div class="fl-header-row">
+    <a class="fl-brand" href="index.html" data-path="home"><span class="fl-brand-mark">F+</span> FITNESSLAB</a>
+    <button class="fl-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span aria-hidden="true"></span></button>
+    <nav class="fl-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html" data-path="home">Home</a><a href="about.html" data-path="about">About</a><a href="programs.html" data-path="programs">Programs</a><a href="trainers.html" data-path="trainers">Trainers</a><a href="membership.html" data-path="membership">Membership</a><a href="journal.html" data-path="journal">Journal</a></nav>
+    <a class="fl-header-cta" href="trainers.html">Trainer bookings <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main class="fl-page" id="main">
+    <section class="fl-page-hero"><div class="fl-page-hero-inner"><p class="fl-kicker">FITNESSLAB / STAFF ACCESS</p><h1>Trainer <span>schedule.</span></h1><p>Add and update team profiles, set weekly hours, and review or cancel upcoming appointments.</p></div></section>
+    <section class="fl-content fl-wrap">
+      <div class="fl-panel fl-admin-login" data-admin-login>
+        <h2>Sign in to manage bookings.</h2>
+        <form class="fl-form" data-admin-auth>
+          <label for="admin-password">Admin password<input id="admin-password" name="password" type="password" autocomplete="current-password" required minlength="12"></label>
+          <button class="fl-button fl-button-dark" type="submit">Sign in</button>
+          <p class="fl-form-status" data-admin-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div data-admin-dashboard hidden>
+        <section class="fl-panel">
+          <div class="fl-admin-heading"><div><p class="fl-kicker">TRAINER DETAILS</p><h2 data-trainer-form-title>Add a trainer</h2></div><button class="fl-button fl-button-dark" type="button" data-new-trainer>New trainer</button></div>
+          <form class="fl-form" data-trainer-form>
+            <input type="hidden" name="id">
+            <label for="trainer-name">Name<input id="trainer-name" name="name" maxlength="80" required></label>
+            <label for="trainer-specialty">Specialty<input id="trainer-specialty" name="specialty" maxlength="120" required></label>
+            <label for="trainer-bio">Short biography<textarea id="trainer-bio" name="bio" maxlength="500" rows="3"></textarea></label>
+            <label for="trainer-photo">Photo URL (optional)<input id="trainer-photo" name="photo" type="text" inputmode="url" maxlength="500" placeholder="https://… or /assets/coaches/photo.jpg"><span class="fl-note">Use an HTTPS image URL or a path to an image in this site.</span></label>
+            <label for="trainer-photo-file">Upload a photo (optional)<input id="trainer-photo-file" name="photoFile" type="file" accept="image/jpeg,image/png,image/webp"><span class="fl-note">JPEG, PNG, or WebP · up to 1.5 MB. A selected upload replaces the photo URL.</span><img class="fl-admin-photo-preview" data-photo-preview alt="" hidden></label>
+            <fieldset class="fl-availability-editor"><legend>Weekly availability · 60-minute appointments</legend><p>Choose one continuous block on each available day. Start and end times use whole hours.</p>
+              <div class="fl-admin-days" data-admin-days></div>
+            </fieldset>
+            <label class="fl-admin-active"><input type="checkbox" name="active" checked> Accept new appointments</label>
+            <div class="fl-admin-actions"><button class="fl-button fl-button-dark" type="submit" data-trainer-submit>Save trainer</button><button class="fl-button" type="button" data-delete-trainer hidden>Deactivate trainer</button></div>
+            <p class="fl-form-status" data-trainer-status role="status" aria-live="polite"></p>
+          </form>
+        </section>
+        <section class="fl-content fl-admin-bookings">
+          <div class="fl-section-head"><div><p class="fl-kicker">UPCOMING</p><h2>Booked sessions</h2></div><button class="fl-button fl-button-dark" type="button" data-refresh-bookings>Refresh</button></div>
+          <div data-booking-list aria-live="polite"></div>
+        </section>
+        <button class="fl-button" type="button" data-admin-logout>Sign out</button>
+      </div>
+    </section>
+  </main>
+  <footer class="fl-footer"><div class="fl-wrap"><div class="fl-footer-bottom"><span>© <span data-year></span> FitnessLab</span><span>Bookings are stored on this server.</span></div></div></footer>
+</body>
+</html>

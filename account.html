@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create a FitnessLab account to save your training progress and keep track of sessions booked with your account.">
+  <title>Your account — FitnessLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <script src="app.js?v=8" defer></script>
+  <script src="account.js?v=1" defer></script>
+</head>
+<body>
+  <a class="fl-skip" href="#main">Skip to content</a>
+  <header class="fl-site-header"><div class="fl-header-row">
+    <a class="fl-brand" href="index.html" data-path="home"><span class="fl-brand-mark">F+</span> FITNESSLAB</a>
+    <button class="fl-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span aria-hidden="true"></span></button>
+    <nav class="fl-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html" data-path="home">Home</a><a href="about.html" data-path="about">About</a><a href="programs.html" data-path="programs">Programs</a><a href="trainers.html" data-path="trainers">Trainers</a><a href="membership.html" data-path="membership">Membership</a><a href="journal.html" data-path="journal">Journal</a></nav>
+    <a class="fl-header-cta" href="trainers.html" data-path="trainers">Find a coach <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main class="fl-page" id="main">
+    <section class="fl-page-hero"><div class="fl-page-hero-inner"><p class="fl-kicker">YOUR FITNESSLAB SPACE</p><h1>Your training,<br><span>your account.</span></h1><p>Save personal training check-ins to your account, access them across devices, and keep track of sessions booked while signed in.</p></div></section>
+    <section class="fl-content fl-wrap">
+      <div class="fl-note fl-account-privacy">Your account is protected by a password. Progress notes and account-linked bookings are stored in FitnessLab’s database. Do not enter medical or highly sensitive details.</div>
+      <p class="fl-form-status" data-account-status role="status" aria-live="polite"></p>
+      <div data-account-auth>
+        <div class="fl-two-col fl-account-forms">
+          <form class="fl-panel fl-form" data-account-login>
+            <div><p class="fl-kicker">WELCOME BACK</p><h2>Sign in.</h2></div>
+            <label for="account-login-email">Email address<input id="account-login-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+            <label for="account-login-password">Password<input id="account-login-password" name="password" type="password" autocomplete="current-password" maxlength="128" required></label>
+            <button class="fl-button fl-button-dark" type="submit">Sign in</button>
+          </form>
+          <form class="fl-panel fl-form" data-account-register>
+            <div><p class="fl-kicker">START YOUR ACCOUNT</p><h2>Create account.</h2></div>
+            <label for="account-register-name">Your name<input id="account-register-name" name="name" autocomplete="name" minlength="2" maxlength="80" required></label>
+            <label for="account-register-email">Email address<input id="account-register-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+            <label for="account-register-password">Password<input id="account-register-password" name="password" type="password" autocomplete="new-password" minlength="12" maxlength="128" required></label>
+            <p class="fl-account-password-note">Use at least 12 characters. Choose a unique password you do not use elsewhere.</p>
+            <button class="fl-button fl-button-dark" type="submit">Create account</button>
+          </form>
+        </div>
+      </div>
+      <section class="fl-panel fl-account-dashboard" data-account-dashboard hidden>
+        <div class="fl-account-heading">
+          <div><p class="fl-kicker">YOUR SPACE</p><h2 data-account-greeting></h2><p data-account-email></p></div>
+          <button class="fl-button" type="button" data-account-logout>Sign out</button>
+        </div>
+        <div class="fl-account-actions"><a class="fl-button fl-button-dark" href="progress.html">Open progress log <span aria-hidden="true">↗</span></a><a class="fl-button" href="trainers.html">Book a training session <span aria-hidden="true">↗</span></a></div>
+        <div class="fl-account-booking-section"><h3>Your bookings</h3><div class="fl-account-bookings" data-account-bookings aria-live="polite"></div></div>
+      </section>
+      <div class="fl-band fl-progress-next"><div class="fl-band-inner"><div><p class="fl-kicker">MAKE IT A ROUTINE</p><h2>Build your next step <span>with a coach.</span></h2></div><a class="fl-button" href="trainers.html">Meet the coaches <span aria-hidden="true">↗</span></a></div></div>
+    </section>
+  </main>
+  <footer class="fl-footer"><div class="fl-wrap"><div class="fl-footer-grid"><div><a class="fl-brand" href="index.html"><span class="fl-brand-mark">F+</span> FITNESSLAB</a><p>Curious about training. Serious about people.</p></div><div><h2>Explore</h2><a href="programs.html">Programs &amp; lab</a><a href="trainers.html">Coaches</a><a href="progress.html">Progress log</a><a href="membership.html">Membership</a><a href="journal.html">Journal</a></div><div><h2>Visit</h2><a href="contact.html">Plan a visit</a><a href="mailto:support@fitnesslab.com">support@fitnesslab.com</a><p>Visit FitnessLab in Skopje - Aerodrom.</p></div><div><h2>Useful</h2><a href="privacy.html">Privacy &amp; cookies</a><a href="contact.html">Ask a question ↗</a></div></div><div class="fl-footer-bottom"><span>© <span data-year></span> FitnessLab</span><span>Training information is educational, not medical advice.</span></div></div></footer>
+  <div class="fl-cookie" data-cookie-banner hidden><p>Your cookie-notice choice is saved in your browser. <a href="privacy.html">Privacy details</a>.</p><button class="fl-button" type="button" data-cookie-accept>Got it</button></div>
+</body>
+</html>
