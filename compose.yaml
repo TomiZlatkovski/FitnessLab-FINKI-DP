@@ -1,0 +1,35 @@
+services:
+  fitnesslab:
+    cpus: 0.5
+    mem_limit: 768M
+    build:
+      context: .
+    image: fitnesslab:local
+    restart: unless-stopped
+    init: true
+    environment:
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set a private ADMIN_PASSWORD in .env}
+      DATABASE_PATH: /app/data/fitnesslab.sqlite
+      HOST: 0.0.0.0
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: 3000
+      TZ: Europe/Skopje
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - fitnesslab-data:/app/data
+      - fitnesslab-uploads:/app/assets/coaches/uploads
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3000/').then((response) => process.exit(response.ok ? 0 : 1)).catch(() => process.exit(1))"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  fitnesslab-data:
+  fitnesslab-uploads:

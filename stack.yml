@@ -1,0 +1,9 @@
+version: 1
+ingress:
+  - name: fitnesslab
+    hostname: fitnesslab.local
+    service: fitnesslab
+    port: 3000
+    primary: true
+    access:
+      type: public
