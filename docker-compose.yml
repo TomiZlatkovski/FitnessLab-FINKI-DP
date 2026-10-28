@@ -5,16 +5,18 @@ services:
     build:
       context: .
     image: fitnesslab:local
+    restart: unless-stopped
+    init: true
     environment:
-      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set a private ADMIN_PASSWORD in deployment environment}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set a private ADMIN_PASSWORD in .env}
       DATABASE_PATH: /app/data/fitnesslab.sqlite
       HOST: 0.0.0.0
-      NODE_ENV: ${NODE_ENV:-production}
+      NODE_ENV: ${NODE_ENV:-development}
       PORT: 3000
-      TZ: Europe/Skopje
+      TZ: Europe/Skopje 
     volumes:
-      - ./data:/app/data
-      - ./assets/coaches/uploads:/app/assets/coaches/uploads
+      - fitnesslab-data:/app/data
+      - fitnesslab-uploads:/app/assets/coaches/uploads
     healthcheck:
       test:
         - CMD
@@ -25,3 +27,7 @@ services:
       timeout: 5s
       retries: 3
       start_period: 5s
+
+volumes:
+  fitnesslab-data:
+  fitnesslab-uploads:
