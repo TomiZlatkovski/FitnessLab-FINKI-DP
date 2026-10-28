@@ -6,7 +6,7 @@ services:
       context: .
     image: fitnesslab:local
     environment:
-      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set a private ADMIN_PASSWORD in .env}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set a private ADMIN_PASSWORD in deployment environment}
       DATABASE_PATH: /app/data/fitnesslab.sqlite
       HOST: 0.0.0.0
       NODE_ENV: ${NODE_ENV:-production}
