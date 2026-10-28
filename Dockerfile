@@ -7,7 +7,10 @@ COPY --chown=node:node . .
 RUN mkdir -p /app/data /app/assets/coaches/uploads \
     && chown -R node:node /app/data /app/assets/coaches/uploads
 
-USER node
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
+
 EXPOSE 3000
+ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["npm", "start"]

@@ -3,6 +3,7 @@
 .env.*
 !.env.example
 data/
+.stack-data/
 node_modules/
 assets/coaches/uploads/
 asd
